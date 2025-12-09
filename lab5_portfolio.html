@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №5 - Портфоліо</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect fill="%23f5f5f5" width="100" height="100"/><circle cx="1" cy="1" r="1" fill="%23ddd"/></svg>');
+            background-size: 4px 4px;
+            color: #333;
+        }
+
+        header {
+            background: white;
+            border-bottom: 2px solid #333;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 15px;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            color: #ff6b6b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 100px auto 50px;
+            padding: 0 40px;
+        }
+
+        .hero {
+            background: white;
+            padding: 60px;
+            border: 2px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+            gap: 40px;
+        }
+
+        .hero-content h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .hero-content h2 {
+            font-size: 38px;
+            color: #555;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .hero-content p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn-download {
+            background: #ff6b6b;
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-download:hover {
+            background: #ff5252;
+        }
+
+        .hero-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #333;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .section-header h3 {
+            font-size: 28px;
+        }
+
+        .view-all {
+            color: #ff6b6b;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .lab-works {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .lab-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            padding: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .lab-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .lab-card h4 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .lab-card p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .lab-date {
+            color: #999;
+            font-size: 13px;
+        }
+
+        .practical-works {
+            margin-top: 40px;
+        }
+
+        .practical-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            padding: 25px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            transition: transform 0.3s;
+        }
+
+        .practical-card:hover {
+            transform: translateX(5px);
+        }
+
+        .practical-image {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #333;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+        
+        .practical-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .practical-content h4 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .tag.css {
+            background: #ff6b6b;
+        }
+
+        .practical-content p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .container {
+                padding: 0 20px;
+                margin-top: 140px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 30px;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .hero-content h2 {
+                font-size: 28px;
+            }
+
+            .hero-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .lab-works {
+                grid-template-columns: 1fr;
+            }
+
+            .practical-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Магурський Владислав</div>
+            <ul class="nav-links">
+                <li><a onclick="document.getElementById('home').scrollIntoView({behavior: 'smooth'})">Головна</a></li>
+                <li><a onclick="document.getElementById('home').scrollIntoView({behavior: 'smooth'})">Про мене</a></li>
+                <li><a onclick="document.getElementById('labs').scrollIntoView({behavior: 'smooth'})">Лабораторні</a></li>
+                <li><a onclick="document.getElementById('practical').scrollIntoView({behavior: 'smooth'})">Практичні</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Hi, I am Vladyslav,</h1>
+                <h2>Creative Technologist</h2>
+                <p>Студент групи КІД-42. На цьому сайті зібрані всі лабораторні та практичні роботи з дисципліни "Веб-технології та веб-дизайн".</p>
+                <a href="#" class="btn-download" style="pointer-events: none; opacity: 0.7;">Download Resume</a>
+            </div>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Ccircle cx='125' cy='125' r='120' fill='%234a5568'/%3E%3Ccircle cx='125' cy='100' r='40' fill='%23fff'/%3E%3Cpath d='M125 150 Q90 170 70 200 L180 200 Q160 170 125 150' fill='%23fff'/%3E%3C/svg%3E" alt="Profile" class="hero-image">
+        </section>
+
+        <section id="labs">
+            <div class="section-header">
+                <h3>Лабораторні роботи</h3>
+                <a href="#" class="view-all">Переглянути всі</a>
+            </div>
+            <div class="lab-works">
+                <div class="lab-card">
+                    <h4>Лабораторна робота №2</h4>
+                    <p>Основи HTML та структура документа.</p>
+                    <span class="lab-date">Вересень 2025</span>
+                    <a href="https://github.com/vladmagurskij-spec/lab2-css" target="_blank" style="display: block; margin-top: 15px; color: #ff6b6b; text-decoration: none; font-weight: 600;">Переглянути →</a>
+                </div>
+                <div class="lab-card">
+                    <h4>Лабораторна робота №3</h4>
+                    <p>Використання CSS для стилізації сторінок.</p>
+                    <span class="lab-date">Жовтень 2025</span>
+                    <a href="https://vladmagurskij-spec.github.io/youtube-flex/" target="_blank" style="display: block; margin-top: 15px; color: #ff6b6b; text-decoration: none; font-weight: 600;">Переглянути →</a>
+                </div>
+                <div class="lab-card">
+                    <h4>Лабораторна робота №4</h4>
+                    <p>Розмітка блоків і компонування елементів.</p>
+                    <span class="lab-date">Листопад 2025</span>
+                    <a href="https://vladmagurskij-spec.github.io/weekly-planner-practice5/" target="_blank" style="display: block; margin-top: 15px; color: #ff6b6b; text-decoration: none; font-weight: 600;">Переглянути →</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="practical-works" id="practical">
+            <div class="section-header">
+                <h3>Практичні роботи</h3>
+            </div>
+            
+            <div class="practical-card">
+                <div class="practical-image">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='techGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%231e3a8a'/%3E%3Cstop offset='100%25' style='stop-color:%230f172a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23techGrad)'/%3E%3Ccircle cx='30' cy='30' r='3' fill='%2360a5fa' opacity='0.6'/%3E%3Ccircle cx='70' cy='40' r='2' fill='%2360a5fa' opacity='0.4'/%3E%3Ccircle cx='50' cy='60' r='4' fill='%233b82f6' opacity='0.8'/%3E%3Ccircle cx='80' cy='70' r='2' fill='%2360a5fa' opacity='0.5'/%3E%3Cpath d='M30 30 L50 60 L70 40' stroke='%233b82f6' stroke-width='0.5' opacity='0.3' fill='none'/%3E%3Crect x='35' y='70' width='30' height='18' fill='%234b5563' rx='1'/%3E%3Crect x='37' y='72' width='26' height='12' fill='%236366f1' opacity='0.3'/%3E%3Cline x1='20' y1='30' x2='80' y2='30' stroke='%233b82f6' stroke-width='0.3' opacity='0.2'/%3E%3Cline x1='20' y1='50' x2='80' y2='50' stroke='%233b82f6' stroke-width='0.3' opacity='0.2'/%3E%3C/svg%3E" alt="Technology">
+                </div>
+                <div class="practical-content">
+                    <h4>Практична робота №2</h4>
+                    <span class="tag css">CSS</span>
+                    <p>Основи CSS та стилізація елементів.</p>
+                    <a href="https://github.com/vladmagurskij-spec/lab2-css/blob/main/lab2.css" target="_blank" style="display: inline-block; margin-top: 10px; color: #ff6b6b; text-decoration: none; font-weight: 600;">Переглянути →</a>
+                </div>
+            </div>
+
+            <div class="practical-card">
+                <div class="practical-image">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='techGrad2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23581c87'/%3E%3Cstop offset='100%25' style='stop-color:%230f172a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23techGrad2)'/%3E%3Ccircle cx='25' cy='35' r='3' fill='%23a78bfa' opacity='0.6'/%3E%3Ccircle cx='75' cy='45' r='2' fill='%23a78bfa' opacity='0.4'/%3E%3Ccircle cx='45' cy='55' r='4' fill='%238b5cf6' opacity='0.8'/%3E%3Ccircle cx='65' cy='25' r='2' fill='%23a78bfa' opacity='0.5'/%3E%3Cpath d='M25 35 L45 55 L75 45' stroke='%238b5cf6' stroke-width='0.5' opacity='0.3' fill='none'/%3E%3Crect x='35' y='70' width='30' height='18' fill='%234b5563' rx='1'/%3E%3Crect x='37' y='72' width='26' height='12' fill='%237c3aed' opacity='0.3'/%3E%3Cline x1='15' y1='35' x2='85' y2='35' stroke='%238b5cf6' stroke-width='0.3' opacity='0.2'/%3E%3Cline x1='15' y1='55' x2='85' y2='55' stroke='%238b5cf6' stroke-width='0.3' opacity='0.2'/%3E%3C/svg%3E" alt="Technology">
+                </div>
+                <div class="practical-content">
+                    <h4>Практична робота №3</h4>
+                    <span class="tag">HTML</span>
+                    <p>Flexbox та адаптивна верстка YouTube.</p>
+                    <a href="https://vladmagurskij-spec.github.io/youtube-flex/" target="_blank" style="display: inline-block; margin-top: 10px; color: #ff6b6b; text-decoration: none; font-weight: 600;">Переглянути →</a>
+                </div>
+            </div>
+
+            <div class="practical-card">
+                <div class="practical-image">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='techGrad3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23134e4a'/%3E%3Cstop offset='100%25' style='stop-color:%230f172a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23techGrad3)'/%3E%3Ccircle cx='35' cy='40' r='3' fill='%235eead4' opacity='0.6'/%3E%3Ccircle cx='65' cy='30' r='2' fill='%235eead4' opacity='0.4'/%3E%3Ccircle cx='50' cy='50' r='4' fill='%2314b8a6' opacity='0.8'/%3E%3Ccircle cx='75' cy='65' r='2' fill='%235eead4' opacity='0.5'/%3E%3Cpath d='M35 40 L50 50 L65 30' stroke='%2314b8a6' stroke-width='0.5' opacity='0.3' fill='none'/%3E%3Crect x='35' y='70' width='30' height='18' fill='%234b5563' rx='1'/%3E%3Crect x='37' y='72' width='26' height='12' fill='%2314b8a6' opacity='0.3'/%3E%3Cline x1='20' y1='40' x2='80' y2='40' stroke='%2314b8a6' stroke-width='0.3' opacity='0.2'/%3E%3Cline x1='20' y1='60' x2='80' y2='60' stroke='%2314b8a6' stroke-width='0.3' opacity='0.2'/%3E%3C/svg%3E" alt="Technology">
+                </div>
+                <div class="practical-content">
+                    <h4>Практична робота №4</h4>
+                    <span class="tag css">CSS</span>
+                    <p>Клавіатурна розкладка та робота з інтерактивними елементами.</p>
+                    <a href="https://vladmagurskij-spec.github.io/keyboard-layout-practice4/" target="_blank" style="display: inline-block; margin-top: 10px; color: #ff6b6b; text-decoration: none; font-weight: 600;">Переглянути →</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
