@@ -2,118 +2,113 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio</title>
+    <title>Магурський Владислав — Портфоліо</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- FIXED LINK TO TEMPLATE -->
-<a class="template-link" href="#" target="_blank">Template Source</a>
-
-<header>
-    <div class="container header-container">
-        <div class="logo">VLAD</div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#about">About</a>
-            <a href="#work">Work</a>
-            <a href="#contact">Contact</a>
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">Магурський Владислав</div>
+        <nav class="nav">
+            <a href="#">Головна</a>
+            <a href="#about">Про мене</a>
+            <a href="#labs">Лабораторні</a>
+            <a href="#pract">Практичні</a>
         </nav>
     </div>
 </header>
 
-<section class="hero">
-    <div class="container hero-container">
-        <div class="hero-text">
-            <h1>Hi, I'm Vlad 👋</h1>
-            <p>Junior Frontend Developer. Creating clean, modern and effective interfaces.</p>
-            <div class="hero-buttons">
-                <a href="#" class="btn">Download CV</a>
-                <a href="#contact" class="btn secondary">Contact Me</a>
-            </div>
-        </div>
-        <div class="hero-photo">
-            <img src="https://i.imgur.com/mO4cB5w.png" alt="profile">
-        </div>
-    </div>
-</section>
-
-<section id="about" class="about">
-    <div class="container about-container">
-        <img src="https://i.imgur.com/Yl4O4fR.jpeg" class="about-photo">
-        <div class="about-text">
-            <h2>About Me</h2>
-            <p>I'm studying frontend development and love building clean UI layouts. Skilled in HTML, CSS, JS, GitHub, and UI components.</p>
-            <ul class="skills">
-                <li>HTML</li>
-                <li>CSS / SCSS</li>
-                <li>JavaScript</li>
-                <li>GitHub</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<section id="work" class="work">
+<main class="page">
     <div class="container">
-        <h2>Recent Projects</h2>
 
-        <div class="projects-grid">
-            <div class="project-card">
-                <img src="https://i.imgur.com/CQvB1pG.png">
-                <h3>Landing Page</h3>
-                <a href="#" class="btn small">View Project</a>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Hi, I am Vlad,<br>Frontend Student</h1>
+                <p class="hero-sub">
+                    Студент групи КІД-42. На цьому сайті зібрані всі лабораторні та практичні роботи
+                    з дисципліни «Веб-технології та веб-дизайн».
+                </p>
+                <button class="btn primary">Download Resume</button>
+            </div>
+            <div class="hero-photo-wrap">
+                <div class="hero-photo-circle">
+                    <img src="https://images.pexels.com/photos/2127733/pexels-photo-2127733.jpeg?auto=compress&cs=tinysrgb&w=800" alt="cool motorcycle">
+                </div>
+            </div>
+        </section>
+
+        <!-- ЛАБОРАТОРНІ -->
+        <section id="labs" class="card-section">
+            <div class="card-section-header">
+                <h2>Лабораторні роботи</h2>
+                <a href="#" class="see-all">Переглянути всі</a>
             </div>
 
-            <div class="project-card">
-                <img src="https://i.imgur.com/Qg8PNEU.png">
-                <h3>Portfolio UI</h3>
-                <a href="#" class="btn small">View Project</a>
-            </div>
+            <div class="labs-row">
+                <article class="lab-card">
+                    <h3>Лабораторна робота №2</h3>
+                    <p class="lab-desc">Основи HTML та структура документа.</p>
+                    <p class="lab-meta">Вересень 2024</p>
+                </article>
 
-            <div class="project-card">
-                <img src="https://i.imgur.com/1s6t4eK.png">
-                <h3>Dashboard UI</h3>
-                <a href="#" class="btn small">View Project</a>
+                <article class="lab-card">
+                    <h3>Лабораторна робота №3</h3>
+                    <p class="lab-desc">Використання CSS для стилізації сторінок.</p>
+                    <p class="lab-meta">Жовтень 2024</p>
+                </article>
+
+                <article class="lab-card">
+                    <h3>Лабораторна робота №4</h3>
+                    <p class="lab-desc">Розмітка блоків і компонування елементів.</p>
+                    <p class="lab-meta">Листопад 2024</p>
+                </article>
             </div>
-        </div>
+        </section>
+
+        <!-- ПРАКТИЧНІ -->
+        <section id="pract" class="card-section">
+            <h2 class="section-title">Практичні роботи</h2>
+
+            <article class="pract-card">
+                <div class="pract-img-wrap">
+                    <img src="https://images.pexels.com/photos/1303098/pexels-photo-1303098.jpeg?auto=compress&cs=tinysrgb&w=800" alt="matrix">
+                </div>
+                <div class="pract-content">
+                    <h3>Практична робота №2</h3>
+                    <span class="tag html-tag">HTML</span>
+                    <p class="pract-desc">Основи створення вебсторінки.</p>
+                </div>
+            </article>
+
+            <article class="pract-card">
+                <div class="pract-img-wrap">
+                    <img src="https://images.pexels.com/photos/1303098/pexels-photo-1303098.jpeg?auto=compress&cs=tinysrgb&w=800" alt="matrix">
+                </div>
+                <div class="pract-content">
+                    <h3>Практична робота №3</h3>
+                    <span class="tag css-tag">CSS</span>
+                    <p class="pract-desc">Базове оформлення елементів сторінки.</p>
+                </div>
+            </article>
+
+            <article class="pract-card">
+                <div class="pract-img-wrap">
+                    <img src="https://images.pexels.com/photos/1303098/pexels-photo-1303098.jpeg?auto=compress&cs=tinysrgb&w=800" alt="matrix">
+                </div>
+                <div class="pract-content">
+                    <h3>Практична робота №4</h3>
+                    <span class="tag css-tag">CSS</span>
+                    <p class="pract-desc">Розміщення контенту та робота з каскадними стилями.</p>
+                </div>
+            </article>
+
+        </section>
+
     </div>
-</section>
-
-<section class="testimonials">
-    <div class="container">
-        <h2>Testimonials</h2>
-
-        <div class="testimonials-grid">
-            <div class="test-card">
-                <p>"Clean and modern UI implementation. Great job!"</p>
-                <span>— Designer</span>
-            </div>
-            <div class="test-card">
-                <p>"Very structured code, easy to maintain and understand."</p>
-                <span>— Developer</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contact" class="contact">
-    <div class="container contact-container">
-        <h2>Contact Me</h2>
-        <p>Email: <b>example@gmail.com</b></p>
-        <p>Telegram: <b>@vlad</b></p>
-        <div class="socials">
-            <a href="#">Instagram</a>
-            <a href="#">GitHub</a>
-            <a href="#">LinkedIn</a>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <p>© 2025 Vlad Portfolio. All rights reserved.</p>
-</footer>
+</main>
 
 </body>
 </html>
