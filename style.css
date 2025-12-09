@@ -1,223 +1,252 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: "Inter", sans-serif;
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {
-    background: #fafafa;
-    color: #222;
+    background: #e5e5e5;
+    color: #1c1c1c;
 }
 
-/* Fixed template link */
-.template-link {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    padding: 6px 10px;
-    background: #000;
-    color: #fff;
-    font-size: 12px;
-    border-radius: 6px;
-    text-decoration: none;
-    opacity: 0.7;
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* HEADER */
+
+.site-header {
+    background: #ffffff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    position: sticky;
+    top: 0;
     z-index: 10;
 }
 
-/* Container */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-}
-
-/* Header */
-header {
-    padding: 20px 0;
-}
-
-.header-container {
+.header-inner {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    height: 64px;
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
-nav a {
-    margin-left: 20px;
+.nav a {
+    margin-left: 24px;
     text-decoration: none;
-    color: #333;
-    font-weight: 500;
+    color: #555;
+    font-size: 14px;
 }
 
-nav a:hover {
+.nav a:hover {
     color: #000;
+}
+
+/* PAGE WRAPPER */
+
+.page {
+    padding: 24px 0 40px;
 }
 
 /* HERO */
+
 .hero {
-    padding: 60px 0;
-}
-
-.hero-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.hero-text {
-    width: 50%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 32px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+    margin-bottom: 24px;
 }
 
 .hero-text h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
+    font-size: 32px;
+    line-height: 1.25;
+    margin-bottom: 12px;
 }
 
-.hero-buttons {
-    margin-top: 20px;
+.hero-sub {
+    font-size: 14px;
+    color: #555;
+    max-width: 420px;
+    margin-bottom: 20px;
 }
 
-.btn {
-    background: #000;
-    color: white;
-    padding: 12px 20px;
-    text-decoration: none;
-    border-radius: 8px;
-    margin-right: 10px;
+.btn.primary {
+    background: #f04b4b;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 10px 24px;
+    font-size: 14px;
+    cursor: pointer;
 }
 
-.secondary {
-    background: #ddd;
-    color: #000;
+.btn.primary:hover {
+    background: #d93d3d;
 }
 
-.hero-photo img {
-    width: 280px;
-    border-radius: 50%;
-    border: 6px solid #eee;
-}
-
-/* ABOUT */
-.about {
-    padding: 60px 0;
-}
-
-.about-container {
+.hero-photo-wrap {
     display: flex;
-    gap: 40px;
     align-items: center;
+    justify-content: center;
 }
 
-.about-photo {
-    width: 260px;
-    border-radius: 12px;
+.hero-photo-circle {
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    background: #f3f3f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.skills {
-    list-style: none;
-    margin-top: 10px;
+.hero-photo-circle img {
+    width: 120%;
+    height: auto;
 }
 
-.skills li {
-    padding: 6px 0;
+/* CARD SECTIONS */
+
+.card-section {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px 28px 28px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.05);
+    margin-bottom: 24px;
 }
 
-/* WORK */
-.work {
-    padding: 60px 0;
+.card-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
 }
 
-.projects-grid {
+.card-section h2,
+.section-title {
+    font-size: 20px;
+}
+
+.see-all {
+    font-size: 14px;
+    color: #f04b4b;
+    text-decoration: none;
+}
+
+/* LAB CARDS */
+
+.labs-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 16px;
 }
 
-.project-card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 14px;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+.lab-card {
+    background: #fafafa;
+    border-radius: 16px;
+    padding: 16px 18px;
 }
 
-.project-card img {
-    width: 100%;
+.lab-card h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.lab-desc {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 14px;
+}
+
+.lab-meta {
+    font-size: 11px;
+    color: #888;
+}
+
+/* PRACTICALS */
+
+.pract-card {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 16px;
+    padding: 16px 0;
+    border-top: 1px solid #eee;
+}
+
+.pract-card:first-of-type {
+    border-top: none;
+}
+
+.pract-img-wrap img {
+    width: 120px;
+    height: 70px;
+    object-fit: cover;
     border-radius: 12px;
-    margin-bottom: 10px;
 }
 
-.btn.small {
-    padding: 8px 16px;
+.pract-content h3 {
+    font-size: 15px;
+    margin-bottom: 6px;
 }
 
-/* Testimonials */
-.testimonials {
-    padding: 60px 0;
+.tag {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    color: #fff;
+    margin-bottom: 6px;
 }
 
-.testimonials-grid {
-    display: flex;
-    gap: 20px;
+.html-tag {
+    background: #f04b4b;
 }
 
-.test-card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 14px;
-    width: 50%;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+.css-tag {
+    background: #4285f4;
 }
 
-/* Contact */
-.contact {
-    padding: 60px 0;
-    text-align: center;
+.pract-desc {
+    font-size: 13px;
+    color: #555;
 }
 
-.socials a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #333;
-}
+/* SIMPLE RESPONSIVE */
 
-footer {
-    padding: 20px;
-    text-align: center;
-    background: #eee;
-    margin-top: 40px;
-}
+@media (max-width: 900px) {
 
-/* Mobile */
-@media (max-width: 768px) {
-
-    .hero-container,
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-text,
-    .hero-photo,
-    .about-text {
-        width: 100%;
-    }
-
-    .projects-grid {
+    .hero {
         grid-template-columns: 1fr;
     }
 
-    .testimonials-grid {
-        flex-direction: column;
+    .labs-row {
+        grid-template-columns: 1fr;
     }
 
-    .test-card {
-        width: 100%;
+    .pract-card {
+        grid-template-columns: 1fr;
+    }
+
+    .header-inner {
+        flex-direction: column;
+        height: auto;
+        padding: 8px 0 12px;
+        gap: 6px;
+    }
+
+    .nav a {
+        margin: 0 8px;
+        font-size: 13px;
     }
 }
