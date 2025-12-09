@@ -4,111 +4,111 @@
     <meta charset="UTF-8">
     <title>Магурський Владислав — Портфоліо</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header class="site-header">
-    <div class="container header-inner">
-        <div class="logo">Магурський Владислав</div>
-        <nav class="nav">
-            <a href="#">Головна</a>
-            <a href="#about">Про мене</a>
-            <a href="#labs">Лабораторні</a>
-            <a href="#pract">Практичні</a>
-        </nav>
-    </div>
-</header>
+<div class="page-wrapper">
 
-<main class="page">
-    <div class="container">
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <div class="logo">Магурський Владислав</div>
+            <nav>
+                <a href="#">Головна</a>
+                <a href="#">Про мене</a>
+                <a href="#">Лабораторні</a>
+                <a href="#">Практичні</a>
+            </nav>
+        </div>
+    </header>
 
-        <!-- HERO -->
+    <main class="container">
+
+        <!-- HERO SECTION -->
         <section class="hero">
-            <div class="hero-text">
+            <div class="hero-left">
                 <h1>Hi, I am Vlad,<br>Frontend Student</h1>
                 <p class="hero-sub">
                     Студент групи КІД-42. На цьому сайті зібрані всі лабораторні та практичні роботи
                     з дисципліни «Веб-технології та веб-дизайн».
                 </p>
-                <button class="btn primary">Download Resume</button>
+                <button class="btn">Download Resume</button>
             </div>
-            <div class="hero-photo-wrap">
-                <div class="hero-photo-circle">
-                    <img src="https://images.pexels.com/photos/2127733/pexels-photo-2127733.jpeg?auto=compress&cs=tinysrgb&w=800" alt="cool motorcycle">
+
+            <div class="hero-right">
+                <div class="hero-photo">
+                    <img src="https://images.pexels.com/photos/2127733/pexels-photo-2127733.jpeg?auto=compress&cs=tinysrgb&w=800" alt="moto">
                 </div>
             </div>
         </section>
 
         <!-- ЛАБОРАТОРНІ -->
-        <section id="labs" class="card-section">
-            <div class="card-section-header">
+        <section class="block">
+            <div class="block-header">
                 <h2>Лабораторні роботи</h2>
-                <a href="#" class="see-all">Переглянути всі</a>
+                <a href="#" class="view-all">Переглянути всі</a>
             </div>
 
-            <div class="labs-row">
-                <article class="lab-card">
+            <div class="lab-grid">
+
+                <div class="lab-card">
                     <h3>Лабораторна робота №2</h3>
-                    <p class="lab-desc">Основи HTML та структура документа.</p>
-                    <p class="lab-meta">Вересень 2024</p>
-                </article>
+                    <p class="desc">Основи HTML та структура документа.</p>
+                    <span class="date">Вересень 2024</span>
+                </div>
 
-                <article class="lab-card">
+                <div class="lab-card">
                     <h3>Лабораторна робота №3</h3>
-                    <p class="lab-desc">Використання CSS для стилізації сторінок.</p>
-                    <p class="lab-meta">Жовтень 2024</p>
-                </article>
+                    <p class="desc">Використання CSS для стилізації сторінок.</p>
+                    <span class="date">Жовтень 2024</span>
+                </div>
 
-                <article class="lab-card">
+                <div class="lab-card">
                     <h3>Лабораторна робота №4</h3>
-                    <p class="lab-desc">Розмітка блоків і компонування елементів.</p>
-                    <p class="lab-meta">Листопад 2024</p>
-                </article>
+                    <p class="desc">Розмітка блоків і компонування елементів.</p>
+                    <span class="date">Листопад 2024</span>
+                </div>
+
             </div>
         </section>
 
         <!-- ПРАКТИЧНІ -->
-        <section id="pract" class="card-section">
-            <h2 class="section-title">Практичні роботи</h2>
+        <section class="block">
+            <h2>Практичні роботи</h2>
 
-            <article class="pract-card">
-                <div class="pract-img-wrap">
-                    <img src="https://images.pexels.com/photos/1303098/pexels-photo-1303098.jpeg?auto=compress&cs=tinysrgb&w=800" alt="matrix">
-                </div>
-                <div class="pract-content">
+            <div class="pract-card">
+                <img src="https://images.pexels.com/photos/1303098/pexels-photo-1303098.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+                <div>
                     <h3>Практична робота №2</h3>
-                    <span class="tag html-tag">HTML</span>
-                    <p class="pract-desc">Основи створення вебсторінки.</p>
+                    <span class="tag html">HTML</span>
+                    <p class="desc">Основи створення вебсторінки.</p>
                 </div>
-            </article>
+            </div>
 
-            <article class="pract-card">
-                <div class="pract-img-wrap">
-                    <img src="https://images.pexels.com/photos/1303098/pexels-photo-1303098.jpeg?auto=compress&cs=tinysrgb&w=800" alt="matrix">
-                </div>
-                <div class="pract-content">
+            <div class="pract-card">
+                <img src="https://images.pexels.com/photos/1303098/pexels-photo-1303098.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+                <div>
                     <h3>Практична робота №3</h3>
-                    <span class="tag css-tag">CSS</span>
-                    <p class="pract-desc">Базове оформлення елементів сторінки.</p>
+                    <span class="tag css">CSS</span>
+                    <p class="desc">Базове оформлення елементів сторінки.</p>
                 </div>
-            </article>
+            </div>
 
-            <article class="pract-card">
-                <div class="pract-img-wrap">
-                    <img src="https://images.pexels.com/photos/1303098/pexels-photo-1303098.jpeg?auto=compress&cs=tinysrgb&w=800" alt="matrix">
-                </div>
-                <div class="pract-content">
+            <div class="pract-card">
+                <img src="https://images.pexels.com/photos/1303098/pexels-photo-1303098.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+                <div>
                     <h3>Практична робота №4</h3>
-                    <span class="tag css-tag">CSS</span>
-                    <p class="pract-desc">Розміщення контенту та робота з каскадними стилями.</p>
+                    <span class="tag css">CSS</span>
+                    <p class="desc">Розміщення контенту та робота з каскадними стилями.</p>
                 </div>
-            </article>
+            </div>
 
         </section>
 
-    </div>
-</main>
+    </main>
+
+</div>
 
 </body>
 </html>
