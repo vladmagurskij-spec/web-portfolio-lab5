@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: #fafafa;
+    color: #222;
+}
+
+/* Fixed template link */
+.template-link {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 6px 10px;
+    background: #000;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    opacity: 0.7;
+    z-index: 10;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Header */
+header {
+    padding: 20px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #000;
+}
+
+/* HERO */
+.hero {
+    padding: 60px 0;
+}
+
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-text {
+    width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.hero-buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    background: #000;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.secondary {
+    background: #ddd;
+    color: #000;
+}
+
+.hero-photo img {
+    width: 280px;
+    border-radius: 50%;
+    border: 6px solid #eee;
+}
+
+/* ABOUT */
+.about {
+    padding: 60px 0;
+}
+
+.about-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-photo {
+    width: 260px;
+    border-radius: 12px;
+}
+
+.skills {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.skills li {
+    padding: 6px 0;
+}
+
+/* WORK */
+.work {
+    padding: 60px 0;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.project-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.btn.small {
+    padding: 8px 16px;
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 60px 0;
+}
+
+.testimonials-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.test-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 14px;
+    width: 50%;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+/* Contact */
+.contact {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.socials a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background: #eee;
+    margin-top: 40px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .hero-container,
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text,
+    .hero-photo,
+    .about-text {
+        width: 100%;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonials-grid {
+        flex-direction: column;
+    }
+
+    .test-card {
+        width: 100%;
+    }
+}
